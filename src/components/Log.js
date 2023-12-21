@@ -31,20 +31,22 @@ import loginphoto from "./login-photo.png"
         console.log(formData);
     
         axiosInstance
-          .post('token/', {
+          .post('user/login', {
             email: formData.email,
             password: formData.password,
           })
           .then((res) => {
-            localStorage.setItem('access_token', res.data.access);
-            localStorage.setItem('refresh_token', res.data.refresh);
+            console.log(res)
+            const id=res.data.user.id
+            localStorage.setItem('access_token', res.data.token);
+            // localStorage.setItem('refresh_token', res.data.refresh);
             axiosInstance.defaults.headers['Authorization'] =
               'JWT ' + localStorage.getItem('access_token');
             //navigate('/joblist');
             //console.log(res);
             //console.log(res.data);
-            axiosInstance.get('getuser/').then((res) => {
-              const iduser = res.data[0];
+            axiosInstance.get('user/getuser').then((res) => {
+              const iduser = res.data
               setUserId({ userIdd : iduser });
               console.log("res" ,iduser);
 

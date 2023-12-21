@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom'
 import { useEffect,useLocation} from "react";
 import './Applicants.css';
 import axiosInstance from '../axios';
+import { useParams } from 'react-router-dom';
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -15,22 +16,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Employer = (props) => {
 
-  
+  const { id } = useParams();
   const [user, setUserId] = useState({userIdd:null});
   
     useEffect(() => {
-      axiosInstance.get('getuser/').then((res) => {
+    console.log("lallalalalla")
+      axiosInstance.get("user/getuser").then((res) => {
         const user = res.data;
+        console.log(res)
         setUserId({ userIdd : user});
         //console.log("resss" ,user.userIdd);
         
       
     });
-  },[setUserId]);
+  },[]);
   //console.log("result" ,user)
   const users = user.userIdd;
   const { posts } = props;
-  
+  console.log(user.userIdd)
     const [c , setC] = useState(1);
     if (!posts || posts.length === 0) return (
 
@@ -38,9 +41,7 @@ const Employer = (props) => {
 
       <div className="container-xxl py-5" style={{marginTop:"50px"}}>
         <div className="container">
-        {users && users.map((user) => {
-              
-                return (
+        {users&& 
 
       <div className="page-content page-container" id="page-content">
         <div className="padding">
@@ -54,7 +55,7 @@ const Employer = (props) => {
                         <img src="https://img.icons8.com/bubbles/100/000000/user.png" className="img-radius" alt="User-Profile-Image" />
                       </div>
                       <h6 className="f-w-500" >Profile</h6>
-                      <h6 className="f-w-600" >{user.first_name} &nbsp;{ user.last_name}</h6>
+                      <h6 className="f-w-600" >{users.first_name} &nbsp;{ users.last_name}</h6>
                       <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16" />
                     </div>
                   </div>
@@ -64,18 +65,18 @@ const Employer = (props) => {
                       <div className="row">
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">Email</p>
-                          <h6 className="text-muted f-w-400">{user.email}</h6>
+                          <h6 className="text-muted f-w-400">{users.email}</h6>
                         </div>
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">Domain</p>
-                          <h6 className="text-muted f-w-400">{user.categoryy}</h6>
+                          <h6 className="text-muted f-w-400">{users.categoryy}</h6>
                         </div>
                       </div>
                       <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
                       <div className="row">
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">Adress</p>
-                          <h6 className="text-muted f-w-400">{user.adress}</h6>
+                          <h6 className="text-muted f-w-400">{users.adress}</h6>
                         </div>
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">recent posted jobs </p>
@@ -90,7 +91,7 @@ const Employer = (props) => {
           </div>
         </div>
       </div>
-      );})}
+      }
       
       
           <h1 className="text-center mb-5 wow fadeInUp"  style={{fontSize:'30px',margin:'20px'}} >You don't have any posts</h1>
@@ -106,9 +107,7 @@ const Employer = (props) => {
 
 <div className="container-xxl py-5" style={{marginTop:"50px"}}>
   <div className="container">
-  {users && users.map((user) => {
-          
-          return (
+  {users && 
 <div className="page-content page-container" id="page-content" key={user.id}>
   <div className="padding">
     <div className="row container d-flex justify-content-center">
@@ -131,18 +130,18 @@ const Employer = (props) => {
                 <div className="row">
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">Email</p>
-                    <h6 className="text-muted f-w-400">{user.email}</h6>
+                    <h6 className="text-muted f-w-400">{users.email}</h6>
                   </div>
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">Domain</p>
-                    <h6 className="text-muted f-w-400">{user.categoryy}</h6>
+                    <h6 className="text-muted f-w-400">{users.categoryy}</h6>
                   </div>
                 </div>
                 <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
                 <div className="row">
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">Adress</p>
-                    <h6 className="text-muted f-w-400">{user.adress}</h6>
+                    <h6 className="text-muted f-w-400">{users.adress}</h6>
                   </div>
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">recent posted jobs </p>
@@ -157,7 +156,7 @@ const Employer = (props) => {
     </div>
   </div>
 </div>
-);})}
+}
 
 
     <h1 className="text-center mb-5 wow fadeInUp"  style={{fontSize:'30px',margin:'20px'}} >Your previous job offers</h1>

@@ -1,4 +1,4 @@
-import {Link } from "react-router-dom";
+ import {Link } from "react-router-dom";
 import "./Employee.css"
 import { useState,useEffect } from "react";
 import axiosInstance from '../axios';
@@ -21,7 +21,7 @@ const Specialjoblist = () => {
     
     const [user, setUserId] = useState({userIdd:null});
     useEffect(() => {
-		 axiosInstance.get('getuser/').then((res) => {
+		 axiosInstance.get('user/getuser').then((res) => {
             const user = res.data;
             setUserId({ userIdd : user });
         });

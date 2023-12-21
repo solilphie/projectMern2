@@ -51,7 +51,7 @@ function App() {
               <Route path="/Jobdetail" element={<> <Logoutnav/> <Jobdetail/> </>}/>
 
 
-              <Route path="/employer" element={<> <Logoutnav/> <App_Employer/> </>}/>
+              <Route path="/employer/" element={<> <Logoutnav/> <App_Employer/> </>}/>
               
               <Route path="/employer/create/" element={<> <Logoutnav/> <Create/></>} />
 				      <Route exact path="/employer/edit/:id" element={<> <Logoutnav/><Edit/></>} />
