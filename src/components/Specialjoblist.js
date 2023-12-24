@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Specialjoblist = () => {
     const [postsss, setPostsss] = useState({posts: null});
       useEffect(() => {
-        axiosInstance.get('specialjoblist/').then((res) => {
+        axiosInstance.get('/admin/specialjoblist/').then((res) => {
           const postsss = res.data;
           setPostsss({ posts :postsss  });
           console.log("res" ,postsss.posts);});
@@ -37,9 +37,9 @@ const Specialjoblist = () => {
    
 <div className="container-xxl py-5" style={{marginTop:"50px"}}>
   <div className="container">
-  {users && users.map((user) => {
+  {users && 
           
-          return (
+      
 <div className="page-content page-container" id="page-content">
   <div className="padding">
     <div className="row container d-flex justify-content-center" >
@@ -52,7 +52,7 @@ const Specialjoblist = () => {
                   <img src="https://img.icons8.com/bubbles/100/000000/user.png" className="img-radius" alt="User-Profile-Image" />
                 </div>
                 <h6 className="f-w-500" >Profile</h6>
-                <h6 className="f-w-600" >{user.first_name} &nbsp;{ user.last_name}</h6>
+                <h6 className="f-w-600" >{users.first_name} &nbsp;{ users.last_name}</h6>
                 <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16" />
               </div>
             </div>
@@ -62,18 +62,18 @@ const Specialjoblist = () => {
                 <div className="row">
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">Email</p>
-                    <h6 className="text-muted f-w-400">{user.email}</h6>
+                    <h6 className="text-muted f-w-400">{users.email}</h6>
                   </div>
                   <div className="col-sm-6">
                     <p className="m-b-10 f-w-600">Domain</p>
-                    <h6 className="text-muted f-w-400">{user.categoryy}</h6>
+                    <h6 className="text-muted f-w-400">{users.categoryy}</h6>
                   </div>
                 </div>
                 <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
                 <div className="row">
                   <center><div className="col-sm-6" >
                     <p className="m-b-10 f-w-600">Adress</p>
-                    <h6 className="text-muted f-w-400">{user.adress}</h6>
+                    <h6 className="text-muted f-w-400">{users.adress}</h6>
                   </div></center>
                   
                 </div>
@@ -85,7 +85,7 @@ const Specialjoblist = () => {
     </div>
   </div>
 </div>
-);})}
+}
     <center><h1 style={{fontSize:'20px',margin:'20px'}} >Recommended Jobs for you </h1></center>
     <i className="fa fa-search" style={{ color: "black" }} />
 

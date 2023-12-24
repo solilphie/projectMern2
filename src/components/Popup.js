@@ -8,7 +8,9 @@ function Popup(props) {
     const application = props.app;
 
     const handlePDFDownload = (filename) => {
-        axiosInstance.get('download/'+filename, { 
+        console.log(filename)
+
+        axiosInstance.get('admin/DownloadPDF/'+filename, { 
             responseType: 'blob',
         }).then(res => {
             fileDownload(res.data, filename);

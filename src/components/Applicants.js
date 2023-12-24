@@ -15,7 +15,7 @@ const Applicants = () => {
   console.log({job});
     const [applications, setApplications] = useState({applicationss:null});
     useEffect(() => {
-    axiosInstance.get('getapplications/'+job.id).then((res) => {
+    axiosInstance.get('/apply/applications/'+job.id).then((res) => {
       const applications = res.data;
       setApplications({ applicationss : applications });
       

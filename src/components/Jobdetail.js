@@ -8,10 +8,11 @@ import {Link } from "react-router-dom";
 const Jobdetail = (props) => {
   const [userId, setUserId] = useState({userIdd:null});
   useEffect(() => {
-    axiosInstance.get('getuser/').then((res) => {
-      const iduser = res.data[0];
+    axiosInstance.get('user/getuser/').then((res) => {
+      const iduser = res.data;
       setUserId({ userIdd : iduser });
       console.log("res" ,userId.userIdd);
+      
     });
   }, [setUserId]); 
   const location = useLocation();
@@ -61,7 +62,7 @@ const Jobdetail = (props) => {
 
 
   const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-	 const URL = 'http://127.0.0.1:8000/api/admin/apply/';
+	 const URL = 'http://127.0.0.1:8000/api/apply/';
 	 let formDataf = new FormData();
 	formDataf.append('jobid', job.id);
 	formDataf.append('author', userId.userIdd.id);

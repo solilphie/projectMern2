@@ -26,6 +26,7 @@ const Ranks = () => {
 );
 
 const handlePDFDownload = (filename) => {
+  console.log(filename)
   axiosInstance.get(('download/'+filename), { 
       responseType: 'blob',
   }).then(res => {

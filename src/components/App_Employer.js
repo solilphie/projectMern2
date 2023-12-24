@@ -10,7 +10,7 @@ function App_Employer() {
 		posts: null,
 	});
 	useEffect(() => {
-		axiosInstance.get().then((res) => {
+		axiosInstance.get('/admin/getpostbyuser').then((res) => {
 			const allPosts = res.data;
 			setAppState({ loading: false, posts: allPosts });
 			console.log(res.data);

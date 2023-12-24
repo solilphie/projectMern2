@@ -6,14 +6,14 @@ import './create.css'
 
 
 const Create = () => {
-  const [userId, setUserId] = useState({userIdd:null});
+  const [userId, setUserId] = useState("");
   useEffect(() => {
-    axiosInstance.get('getuser/').then((res) => {
-      const iduser = res.data[0];
-      setUserId({ userIdd : iduser });
-      console.log("res" ,userId.userIdd);
+    axiosInstance.get('user/getuser').then((res) => {
+      const iduser = res.data;
+      setUserId(iduser);  // Set userId using the retrieved data
+      console.log("res", iduser); // Log the updated userId
     });
-  }, [setUserId]);  
+  }, []);  
     
     function slugify(string) {
 		const a =
@@ -69,7 +69,7 @@ const Create = () => {
         company: formData.company,
 				title: formData.title,
 				slug: formData.slug,
-				author: userId.userIdd.id,
+				author: userId.id,
         category:formData.category,
 				excerpt: formData.excerpt,
 				content: formData.content,
