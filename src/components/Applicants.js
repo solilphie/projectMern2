@@ -58,7 +58,6 @@ const Applicants = () => {
   <div className="container-xxl py-5" style={{marginTop:"50px"}}>
   <div className="container">
     <h1 className="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"style={{fontSize:'45px'}}>Applicants</h1>
-    <Link to={"/ranks/"+job.id} state={{data : list}} ><button className="btn btn-primary"style={{fontSize:'20px',margin:'20px'}}>view rank</button></Link>
 
     <div className="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
       

@@ -19,8 +19,7 @@ import Delete from './components/employer/delete';
 import Logoutnav from './components/Logoutnav';
 import Logout from './components/Logout';
 import Applicants from './components/Applicants';
-import Ranks from'./components/Ranks';
-import ResumeDetails from'./components/ResumeDetails';
+
 import Specialjoblist from './components/Specialjoblist';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -57,8 +56,6 @@ function App() {
 				      <Route exact path="/employer/edit/:id" element={<> <Logoutnav/><Edit/></>} />
 				      <Route exact path="/employer/delete/:id" element={<Delete/>} />
               <Route path="/applicants/:id" element={<> <Logoutnav/> <Applicants/> </>}/>
-              <Route path="/ranks/:id" element={<> <Logoutnav/> <Ranks/> </>}/>
-              <Route path="/resumedetails/:id" element={<> <Logoutnav/> <ResumeDetails/> </>}/>
               
               <Route path="/Logout" element={<Logout/>}/>
 

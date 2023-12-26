@@ -137,42 +137,7 @@ by automatically ranking applicants for jobs.</p>
        
        
 
-{/* ======= Contact Section ======= */}
-<section id="contact" className="contact section-bg">
-  <div className="container aos-init" data-aos="fade-up">
-    <div className="section-title">
-      <h2>Contact</h2>
-    </div>
-    <div className="row">
-      <div>
-        <div className="row">
-          <div className="col-md-12">
-            <div className="info-box">
-              <i className="bx bx-map" />
-              <h3>Our Address</h3>
-              <p>Arab League Street,Kélibia</p>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="info-box mt-4">
-              <i className="bx bx-envelope" />
-              <h3>Email Us</h3>
-              <p>khalil.selmi.dev@gmail.com</p>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="info-box mt-4">
-              <i className="bx bx-phone-call" />
-              <h3>Call Us</h3>
-              <p>+216 25 126 899<br />+216 55 343 224</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>{/* End Contact Section */}
+
 </main>
 
    );

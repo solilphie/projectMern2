@@ -14,7 +14,6 @@ const Navbar = () => {
         <li><a className="nav-link scrollto" href="/#features">services</a></li>
         <li><a className="nav-link scrollto" href="/#services">Features</a></li>
 
-        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
         <li><Link className="getstarted scrollto" to="/log">LogIn</Link></li>
       </ul>
       <i className="bi bi-list mobile-nav-toggle" />
